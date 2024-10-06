@@ -17,4 +17,13 @@ public class MenuPausa : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void Botonquit(){
+        Debug.Log("Quitamos la aplicacion");
+        Application.Quit();
+    }
+
+
+
+
+    
 }
