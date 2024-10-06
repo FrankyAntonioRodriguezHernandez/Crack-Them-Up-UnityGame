@@ -22,8 +22,14 @@ public class MenuPausa : MonoBehaviour
         Application.Quit();
     }
 
+    private void Pause(){
+        Time.timeScale =0f;
+        flag = true;
+        menuPausa.SetActive(true);
+    }
 
 
 
-    
+
+
 }
