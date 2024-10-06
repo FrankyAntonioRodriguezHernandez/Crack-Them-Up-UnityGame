@@ -5,17 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
 {
-    
-    public void void Start()
-    {
-        
-    }
-    
+
+
+
     public  void Update()
     {
 
     }
 
-
+    public void BotonStart(){
+        SceneManager.LoadScene(2);
+    }
 
 }
