@@ -45,4 +45,10 @@ public class UiManager : MonoBehaviour{
         textoRisas.text = cantidadRisas.ToString();
     }
 
+    public void RestaVidas(int indice)
+    {
+        Image imagenMascara = listaVidas[indice].GetComponent<Image>();
+        imagenMascara.sprite = mascaraRota;
+    }
+    
 }
