@@ -47,4 +47,14 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale =1f;
     }
 
+    public void MuteHandler(bool mute){
+        if(mute){
+           AudioListener.volume=0;
+        }
+        else{
+            AudioListener.volume=1;
+        }
+    }
+
+    
 }
