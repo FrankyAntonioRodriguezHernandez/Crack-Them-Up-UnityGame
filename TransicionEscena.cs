@@ -12,5 +12,9 @@ public class TransicionEscena : MonoBehaviour
         StartCoroutine(CambiarEscena());
     }
 
+    public void Botonquit(){
+        Debug.Log("Quitamos la aplicacion");
+        Application.Quit();
+    }
 
 }
