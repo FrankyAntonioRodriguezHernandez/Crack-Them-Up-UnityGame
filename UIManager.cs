@@ -31,4 +31,18 @@ public class UiManager : MonoBehaviour{
         cantidadRisas += cantidad;
     }
 
+    private void ActualizarTextoRisas()
+    {
+        // Actualiza el texto que muestra la cantidad de risas
+        textoRisas.text =   cantidadRisas.ToString();
+    }
+     public void RestarRisas(int cantidad)
+    {
+        // Restar la cantidad de risas
+        cantidadRisas -= cantidad;
+
+        // Actualizar el texto en tu UI
+        textoRisas.text = cantidadRisas.ToString();
+    }
+
 }
