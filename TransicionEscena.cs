@@ -7,6 +7,10 @@ using UnityEngine.Animations;
 public class TransicionEscena : MonoBehaviour
 {
 
-    
+
+    public void BotonStart(){
+        StartCoroutine(CambiarEscena());
+    }
+
 
 }
