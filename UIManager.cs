@@ -16,8 +16,19 @@ public class UiManager : MonoBehaviour{
         // Inicia la invocación repetida para aumentar las risas cada 15 segundos
         InvokeRepeating("AumentarRisasPeriodicamente", 0f, 15f);
     }
-    
 
+    private void AumentarRisasPeriodicamente()
+    {
+        // Aumenta la cantidad de risas en 20
+        AumentarRisas(20);
 
+        // Actualiza el texto que muestra la cantidad de risas
+        ActualizarTextoRisas();
+    }
+
+    public void AumentarRisas(int cantidad)
+    {
+        cantidadRisas += cantidad;
+    }
 
 }
