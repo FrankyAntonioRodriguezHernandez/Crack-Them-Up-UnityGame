@@ -56,5 +56,14 @@ public class MenuPausa : MonoBehaviour
         }
     }
 
-    
+    public void BotonControles()
+    {
+        menuControles.SetActive(true);
+    }
+
+    public void BotonsalirControles()
+    {
+        menuControles.SetActive(false);
+    }
+
 }
