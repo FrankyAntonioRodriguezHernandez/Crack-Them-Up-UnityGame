@@ -50,5 +50,10 @@ public class UiManager : MonoBehaviour{
         Image imagenMascara = listaVidas[indice].GetComponent<Image>();
         imagenMascara.sprite = mascaraRota;
     }
-    
+
+    public void SumarVidas(int indice)
+    {
+        Image imagenMascara = listaVidas[indice].GetComponent<Image>();
+        imagenMascara.sprite = mascara;
+    }
 }
