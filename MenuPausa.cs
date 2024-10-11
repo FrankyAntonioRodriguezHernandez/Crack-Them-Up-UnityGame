@@ -5,12 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class MenuPausa : MonoBehaviour
 {
+    [SerializeField] private GameObject menuPausa;
 
-
+    private bool flag=false;
 
     public  void Update()
     {
-
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(!flag)
+            {
+                Pause();
+            }
+            else{
+                Reanudar();
+            }
+        }
     }
 
     public void BotonStart(){
@@ -28,7 +38,11 @@ public class MenuPausa : MonoBehaviour
         menuPausa.SetActive(true);
     }
 
-
+    private void Continue(){
+        Time.timeScale =1f;
+        flag = false;
+        menuPausa.SetActive(false);
+    }
 
 
 
