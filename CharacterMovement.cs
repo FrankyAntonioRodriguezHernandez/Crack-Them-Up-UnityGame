@@ -24,7 +24,10 @@ private void void Start()
 
 private void void Update()
 {
-    
+    if (jugadorHaMuerto)
+        {
+            menuDerrota.SetActive(true);
+        }
 
     float movH = Input.GetAxisRaw("Horizontal");
     float movY = Input.GetAxisRaw("Vertical");
@@ -44,15 +47,17 @@ private void void Update()
     playerAnimator.SetFloat("velocidad", direccion.sqrMagnitude);
     particulas.Play();
 
-    private void FixedUpdate()
-    {
-        rb.MovePosition(rb.position + direccion * velocidad * Time.fixedDeltaTime);
-    }
-
     if (Input.GetMouseButtonDown(0))
         {
             Atacar();
         }
+
+}
+
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + direccion * velocidad * Time.fixedDeltaTime);
+    }
 
     private void Atacar()
     {
@@ -68,10 +73,31 @@ private void void Update()
         playerAnimator.SetBool("Atacar", atacando);
     }
 
-}
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Bestia") || other.CompareTag("DancerAttack")|| other.CompareTag("AtaqueForz"))
+        {
+            CausarHerida();
+        }
+    }
+
+    private void CausarHerida()
+    {
+        if (vidaPersonaje > 0)
+        {
+            vidaPersonaje--;
+            uiManager.RestaVidas(vidaPersonaje);
+
+            // Verifica si la vida llegó a cero
+            if (vidaPersonaje <= 0)
+            {
+                jugadorHaMuerto = true;
+                // Llama a un método para manejar la destrucción del personaje
+                Morir();
+            }
+        }
+    }
 
 
-
-
-
+    
 }
