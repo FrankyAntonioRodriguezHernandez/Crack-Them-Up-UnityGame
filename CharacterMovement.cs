@@ -88,16 +88,29 @@ private void void Update()
             vidaPersonaje--;
             uiManager.RestaVidas(vidaPersonaje);
 
-            // Verifica si la vida llegó a cero
             if (vidaPersonaje <= 0)
             {
                 jugadorHaMuerto = true;
-                // Llama a un método para manejar la destrucción del personaje
                 Morir();
             }
         }
     }
 
+    private void CurarHerida()
+{
+    if (vidaPersonaje > 0 && vidaPersonaje < 5)
+    {
+        if (uiManager.cantidadRisas >= 30)
+        {
+            uiManager.RestarRisas(30);
+            uiManager.SumarVidas(vidaPersonaje);
+            vidaPersonaje++;
+        }
+        else
+        {
+            Debug.Log("No tienes suficientes risas para curarte.");
+        }
+    }
+}
 
-    
 }
