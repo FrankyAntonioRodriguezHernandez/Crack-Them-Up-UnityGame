@@ -49,9 +49,17 @@ private void void Update()
         rb.MovePosition(rb.position + direccion * velocidad * Time.fixedDeltaTime);
     }
 
+    if (Input.GetMouseButtonDown(0))
+        {
+            Atacar();
+        }
 
-
-
+    private void Atacar()
+    {
+        atacando = true;
+        playerAnimator.SetBool("Atacar", atacando);
+        Invoke("DetenerAtaque", playerAnimator.GetCurrentAnimatorStateInfo(0).length);
+    }
 
 }
 
