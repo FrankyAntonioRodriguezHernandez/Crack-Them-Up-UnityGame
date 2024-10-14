@@ -113,4 +113,11 @@ private void void Update()
     }
 }
 
+    private void Morir()
+    {
+        Destroy(gameObject);
+        Time.timeScale =0f;
+        menuDerrota.SetActive(true);
+        
+    }
 }
