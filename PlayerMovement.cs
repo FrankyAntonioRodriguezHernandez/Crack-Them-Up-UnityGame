@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
 
     [SerializeField] private ParticleSystem particulas;
@@ -52,6 +52,10 @@ private void void Update()
             Atacar();
         }
 
+    if (Input.GetKeyDown(KeyCode.Space))
+        {
+            CurarHerida();
+        }
 }
 
     private void FixedUpdate()
