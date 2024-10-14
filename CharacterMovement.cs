@@ -25,6 +25,22 @@ private void void Start()
 private void void Update()
 {
     
+
+    float movH = Input.GetAxisRaw("Horizontal");
+    float movY = Input.GetAxisRaw("Vertical");
+
+    direccion = new Vector2(movH, movY).normalized;
+
+    if (movH != 0)
+    {
+        float spriteScaleX = 0.5f;
+        float spriteScaleY = 0.5f;
+        float spriteScaleZ = 0.5f;
+        transform.localScale = new Vector3(Mathf.Sign(movH) * spriteScaleX, spriteScaleY, spriteScaleZ);
+    }
+
+
+
 }
 
 
