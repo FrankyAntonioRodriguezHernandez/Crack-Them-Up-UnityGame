@@ -44,6 +44,15 @@ private void void Update()
     playerAnimator.SetFloat("velocidad", direccion.sqrMagnitude);
     particulas.Play();
 
+    private void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + direccion * velocidad * Time.fixedDeltaTime);
+    }
+
+
+
+
+
 }
 
 
