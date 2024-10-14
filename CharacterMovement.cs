@@ -61,6 +61,13 @@ private void void Update()
         Invoke("DetenerAtaque", playerAnimator.GetCurrentAnimatorStateInfo(0).length);
     }
 
+    private void DetenerAtaque()
+    {
+        // Desactiva el parámetro "Atacar" en el Animator
+        atacando = false;
+        playerAnimator.SetBool("Atacar", atacando);
+    }
+
 }
 
 
