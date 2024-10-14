@@ -39,7 +39,10 @@ private void void Update()
         transform.localScale = new Vector3(Mathf.Sign(movH) * spriteScaleX, spriteScaleY, spriteScaleZ);
     }
 
-
+    playerAnimator.SetFloat("Horizontal", movH);
+    playerAnimator.SetFloat("Vertical", movY);
+    playerAnimator.SetFloat("velocidad", direccion.sqrMagnitude);
+    particulas.Play();
 
 }
 
