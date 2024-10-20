@@ -72,7 +72,6 @@ private void void Update()
 
     private void DetenerAtaque()
     {
-        // Desactiva el parámetro "Atacar" en el Animator
         atacando = false;
         playerAnimator.SetBool("Atacar", atacando);
     }
@@ -109,10 +108,6 @@ private void void Update()
             uiManager.RestarRisas(30);
             uiManager.SumarVidas(vidaPersonaje);
             vidaPersonaje++;
-        }
-        else
-        {
-            Debug.Log("No tienes suficientes risas para curarte.");
         }
     }
 }
