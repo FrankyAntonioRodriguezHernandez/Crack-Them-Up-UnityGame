@@ -19,7 +19,10 @@ public class VidaTamer : MonoBehaviour
             {
                 vidaTamer--;
            
-            
+                if (vidaTamer == 0)
+                {
+                    Morir();
+                }
+            }
         }
-    }
 }
