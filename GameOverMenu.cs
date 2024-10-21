@@ -16,6 +16,13 @@ public class GameOverMenu : MonoBehaviour
         }
     }
 
-
+    public void ShowGameOverPanel()
+    {
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(true);
+            Time.timeScale =0f;
+        }
+    }
 
 }
