@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     public GameObject gameOverPanel;
-    public string nombreSiguienteEscena;
 
     void Start()
     {
