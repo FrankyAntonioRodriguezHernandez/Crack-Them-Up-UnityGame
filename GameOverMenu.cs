@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     public GameObject gameOverPanel;
+    public string nombreSiguienteEscena;
 
     void Start()
     {
@@ -24,5 +25,12 @@ public class GameOverMenu : MonoBehaviour
             Time.timeScale =0f;
         }
     }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(3);
+        Time.timeScale =1f;
+    }
+
 
 }
