@@ -5,5 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
-    
+    public GameObject gameOverPanel;
+
+    void Start()
+    {
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+            Time.timeScale =1f;
+        }
+    }
+
+
+
 }
