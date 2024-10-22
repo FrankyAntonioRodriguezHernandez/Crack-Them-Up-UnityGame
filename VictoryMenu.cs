@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class VictoryMenu : MonoBehaviour
 {
-    
+    public GameObject menuEmergente;
+
+    void Start()
+    {
+        menuEmergente.SetActive(false);
+    }
 }
