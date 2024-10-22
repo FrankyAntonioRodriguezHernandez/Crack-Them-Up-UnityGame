@@ -10,4 +10,9 @@ public class VictoryMenu : MonoBehaviour
     {
         menuEmergente.SetActive(false);
     }
+
+    public void MostrarMenuEmergente()
+    {
+        menuEmergente.SetActive(true);
+    }
 }
