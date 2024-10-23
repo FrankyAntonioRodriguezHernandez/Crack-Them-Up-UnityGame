@@ -16,9 +16,15 @@ public class DancerMovement : MonoBehaviour
         dancerAnimator = GetComponent<Animator>();
     }
 
+    void Update()
+    {
+        
+    }
 
-
-
+    void Atacar()
+    {
+        dancerAnimator.SetBool("Atacando", true);
+    }
 
 
 }
