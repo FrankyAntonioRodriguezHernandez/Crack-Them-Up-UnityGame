@@ -49,4 +49,11 @@ public class DancerMovement : MonoBehaviour
             }
         }
     }
+
+    private void Die()
+    {
+        
+        Destroy(gameObject);
+        
+    }
 }
