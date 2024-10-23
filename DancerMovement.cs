@@ -26,5 +26,27 @@ public class DancerMovement : MonoBehaviour
         dancerAnimator.SetBool("Atacando", true);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("ArmaPersonaje"))
+        {
+            Hurt();
+        }
+    }
 
+    private void Hurt()
+    {
+        if (vidaDancer > 0)
+        {
+            vidaDancer--;
+           
+
+           
+            if (vidaDancer == 0)
+            {
+               
+                Die();
+            }
+        }
+    }
 }
