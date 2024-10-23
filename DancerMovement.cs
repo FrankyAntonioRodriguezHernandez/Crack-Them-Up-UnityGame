@@ -12,16 +12,42 @@ public class DancerMovement : MonoBehaviour
 
     void Start()
     {
-         objetivo = GameObject.Find("Personaje").transform;
+        objetivo = GameObject.Find("Personaje").transform;
         dancerAnimator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        
+        if (objetivo != null)
+        {
+            Vector2 direccion = (objetivo.position - transform.position).normalized;
+
+            float distanciaAlObjetivo = Vector2.Distance(transform.position, objetivo.position);
+
+            if (distanciaAlObjetivo <= rangoDeAtaque)
+            {
+                Attack();
+            }
+            else
+            {
+                transform.Translate(direccion * velocidad * Time.deltaTime);
+
+                if (direccion.x > 0)
+                {
+                    transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x)*-1, transform.localScale.y, transform.localScale.z);
+                }
+
+                else if (direccion.x < 0)
+                {
+                    transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x)*-1, transform.localScale.y, transform.localScale.z);
+                }
+
+                dancerAnimator.SetBool("Atacando", false);
+            }
+        }
     }
 
-    void Atacar()
+    void Attack()
     {
         dancerAnimator.SetBool("Atacando", true);
     }
