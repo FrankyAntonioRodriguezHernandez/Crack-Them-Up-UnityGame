@@ -16,9 +16,15 @@ public class ForzController : MonoBehaviour
         dancerAnimator = GetComponent<Animator>();
     }
 
+    void Update()
+    {
+        
+    }
+
+    void Atacar()
+    {
+        dancerAnimator.SetBool("Atacando", true);
+    }
 
 
-
-
-    
 }
