@@ -50,5 +50,8 @@ public class ForzController : MonoBehaviour
         }
     }
 
-    
+    private void Morir()
+    {
+        Destroy(gameObject);
+    }
 }
