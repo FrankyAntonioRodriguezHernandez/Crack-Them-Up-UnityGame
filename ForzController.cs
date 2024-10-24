@@ -33,22 +33,18 @@ public class ForzController : MonoBehaviour
             }
             else
             {
-                // Mueve el objeto hacia el objetivo
                 transform.Translate(direccion * velocidad * Time.deltaTime);
 
-                // Rota el sprite para mirar en la dirección adecuada
                 if (direccion.x > 0)
                 {
-                    // Si la dirección en el eje X es positiva, el objetivo está a la derecha
                     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
                 }
+                
                 else if (direccion.x < 0)
                 {
-                    // Si la dirección en el eje X es negativa, el objetivo está a la izquierda
                     transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
                 }
 
-                // Configura el booleano "Atacando" en el Animator
                 dancerAnimator.SetBool("Atacando", false);
             }
         }
