@@ -21,7 +21,19 @@ public class BeastController : MonoBehaviour
 
     void Update()
     {
-        
+        if (objetivo != null)
+        {
+            // Obtén la dirección hacia el objetivo
+            Vector2 direccion = (objetivo.position - transform.position).normalized;
+
+            // Calcula la distancia al objetivo
+            float distanciaAlObjetivo = Vector2.Distance(transform.position, objetivo.position);
+
+            // Si está dentro del rango de ataque, ataca
+            if (distanciaAlObjetivo <= rangoDeAtaque)
+            {
+                Atacar();
+            }
     }
 
     void Atacar()
