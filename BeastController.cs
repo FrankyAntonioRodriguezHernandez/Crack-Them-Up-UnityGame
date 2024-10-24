@@ -34,6 +34,23 @@ public class BeastController : MonoBehaviour
             {
                 Atacar();
             }
+            else
+            {
+                // Mueve la bestia hacia el objetivo
+                transform.position = Vector2.MoveTowards(transform.position, objetivo.position, velocidad * Time.deltaTime);
+
+                // Configura la rotación de la bestia
+                transform.right = direccion;
+
+                // Restaura el booleano cuando no está atacando
+                atacando = false;
+                // Configura el booleano en el Animator
+                bestiaAnimator.SetBool("Atacando", atacando);
+
+                // Desactiva el colisionador cuando no está atacando
+                boxCollider.enabled = false;
+            }
+        }
     }
 
     void Atacar()
