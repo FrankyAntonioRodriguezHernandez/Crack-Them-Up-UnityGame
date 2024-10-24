@@ -26,5 +26,29 @@ public class ForzController : MonoBehaviour
         dancerAnimator.SetBool("Atacando", true);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("ArmaPersonaje"))
+        {
+            CausarHerida();
+        }
+    }
 
+    private void CausarHerida()
+    {
+        if (vidaForz > 0)
+        {
+            vidaForz--;
+           
+
+           
+            if (vidaForz == 0)
+            {
+               
+                Morir();
+            }
+        }
+    }
+
+    
 }
