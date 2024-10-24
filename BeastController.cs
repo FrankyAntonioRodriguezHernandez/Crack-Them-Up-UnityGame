@@ -13,14 +13,25 @@ public class BeastController : MonoBehaviour
 
     void Start()
     {
-         objetivo = GameObject.Find("Personaje").transform;
+        objetivo = GameObject.Find("Personaje").transform;
         bestiaAnimator = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
         boxCollider.enabled = false;
     }
 
+    void Update()
+    {
+        
+    }
 
+    void Atacar()
+    {
+        if (!atacando)
+        {
+            atacando = true;
+            bestiaAnimator.SetBool("Atacando", atacando);
+            boxCollider.enabled = true;
+        }
+    }
 
-
-    
 }
