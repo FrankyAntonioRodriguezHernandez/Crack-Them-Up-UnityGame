@@ -15,6 +15,26 @@ public class BossController : MonoBehaviour
         objetivo = GameObject.Find("Personaje").transform;
     }
 
+    void Update()
+    {
+        if (objetivo != null)
+        {
+            // Implementa aquí la lógica de ataque del bot
+
+            // Obtén la dirección hacia el objetivo
+            Vector2 direccion = (objetivo.position - transform.position).normalized;
+
+            // Calcula la distancia al objetivo
+            float distanciaAlObjetivo = Vector2.Distance(transform.position, objetivo.position);
+
+            // Si está dentro del rango de ataque, ataca
+            if (distanciaAlObjetivo <= rangoDeAtaque)
+            {
+                Atacar();
+            }
+        }
+    }
+
     void Atacar()
     {
         // Configura el booleano "Atacando" en el Animator
