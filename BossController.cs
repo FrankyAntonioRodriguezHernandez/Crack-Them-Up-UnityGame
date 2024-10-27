@@ -14,4 +14,19 @@ public class BossController : MonoBehaviour
         // Encuentra el objetivo por su nombre (asegúrate de que el objetivo tenga el nombre correcto)
         objetivo = GameObject.Find("Personaje").transform;
     }
+
+    void Atacar()
+    {
+        // Configura el booleano "Atacando" en el Animator
+        botAnimator.SetBool("Atacando", true);
+        // Implementa aquí la lógica de ataque del bot
+        // ...
+
+        // Puedes agregar una lógica para detener la animación de ataque después de un tiempo
+        // usando Invoke o algún otro método según tus necesidades
+    }
+
+
+
+
 }
